@@ -1,0 +1,61 @@
+[package]
+name = "app"
+version = "0.1.0"
+description = "A Tauri App"
+authors = ["you"]
+license = ""
+repository = ""
+edition = "2021"
+rust-version = "1.70"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[lib]
+name = "app_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2.0.0-beta.13", features = [] }
+
+[dependencies]
+candle-transformers = { git = "https://github.com/huggingface/candle.git", version = "0.5.1", features = [
+  "metal",
+  "accelerate",
+] }
+candle-core = { git = "https://github.com/huggingface/candle.git", version = "0.5.1", features = [
+  "metal",
+  "accelerate",
+] }
+candle-nn = { git = "https://github.com/huggingface/candle.git", version = "0.5.1", features = [
+  "metal",
+  "accelerate",
+] }
+candle-examples = { git = "https://github.com/huggingface/candle.git", version = "0.5.1", features = [
+  "metal",
+  "accelerate",
+] }
+tokenizers = { version = "0.19.1", default-features = false }
+serde_json = "1.0"
+serde = { version = "1.0", features = ["derive"] }
+tauri = { version = "2.0.0-beta.17", features = [] }
+symphonia = { version = "0.5.3", features = ["all"] }
+cpal = { version = "0.15.2" }
+rubato = { version = "0.15.0" }
+hf-hub = "0.3.0"
+ab_glyph = "0.2.23"
+accelerate-src = { version = "0.3.2" }
+anyhow = { version = "1", features = ["backtrace"] }
+byteorder = "1.4.3"
+clap = { version = "4.2.4", features = ["derive"] }
+imageproc = { version = "0.25.0", default-features = false }
+rand = "0.8.5"
+hound = "3.1.0"
+memmap2 = { version = "0.9.3", features = ["stable_deref_trait"] }
+metal = { version = "0.28.0", features = ["mps"] }
+tracing = "0.1.37"
+tracing-chrome = "0.7.1"
+tracing-subscriber = "0.3.7"
+tokio = { version = "1.29.1", features = ["full"] }
+futures = "0.3.30"
+csv = "1.1.6"
+ndarray = "0.15.4"
