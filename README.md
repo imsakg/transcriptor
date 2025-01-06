@@ -1,6 +1,6 @@
 # Transcriptor
 
-Real-time transcript application.
+Real-time transcription application.
 
 ## Technologies
 
